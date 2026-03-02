@@ -46,9 +46,8 @@ npm run dev
 ## 📫 Contact
 
 - **Email**: mukharjivajje@gmail.com
-- **Phone**: 412-932-0039
 - **LinkedIn**: [linkedin.com/in/mukharji-vajje-182a7a326](https://www.linkedin.com/in/mukharji-vajje-182a7a326)
-- **Location**: New Market, Maryland, United States
+- **Location**: Maryland, United States
 
 ## 📄 License
 
