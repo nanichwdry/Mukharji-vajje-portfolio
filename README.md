@@ -1,20 +1,55 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Mukharji Vajje - Portfolio
 
-# Run and deploy your AI Studio app
+A modern, AI-powered portfolio website showcasing my experience as a Senior Frontend Developer with 9+ years of expertise in building dynamic, responsive web applications.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
 
-View your app in AI Studio: https://ai.studio/apps/9476292d-81a6-4305-a00b-69cdc50b1c23
+- **AI-Powered Resume Assistant** - Interactive chatbot with local RAG system to answer questions about my experience, skills, and projects
+- **Responsive Design** - Fully responsive layout optimized for all devices
+- **Modern UI/UX** - Built with Tailwind CSS and Framer Motion animations
+- **Project Showcase** - Featured projects with live demo links
 
-## Run Locally
+## 🛠️ Tech Stack
 
-**Prerequisites:**  Node.js
+- **React** - Frontend framework
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Vite** - Build tool
 
+## 📦 Installation
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. Clone the repository:
+```bash
+git clone https://github.com/nanichwdry/Mukharji-vajje-portfolio.git
+cd Mukharji-vajje-portfolio
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 🌟 Featured Projects
+
+- **Aura AI Assistant** - Voice-controlled AI with PC automation and 18+ integrated tools
+- **Deep-Zoom Medical Viewer** - High-performance medical imaging visualization tool
+- **MediSchedule** - AI-powered medical appointment system with voice calling
+
+## 📫 Contact
+
+- **Email**: mukharjivajje@gmail.com
+- **Phone**: 412-932-0039
+- **LinkedIn**: [linkedin.com/in/mukharji-vajje-182a7a326](https://www.linkedin.com/in/mukharji-vajje-182a7a326)
+- **Location**: New Market, Maryland, United States
+
+## 📄 License
+
+© 2024 Mukharji Vajje. All rights reserved.
