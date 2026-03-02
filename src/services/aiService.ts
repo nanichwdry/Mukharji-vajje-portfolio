@@ -1,6 +1,3 @@
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export const resumeContext = `
 Name: Mukharji Vajje
@@ -38,22 +35,53 @@ Personal Projects:
 `;
 
 export async function chatWithResume(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) {
-  try {
-    const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash-exp",
-      contents: [
-        { role: 'user', parts: [{ text: `You are an AI assistant representing Mukharji Vajje. Use the following resume context to answer questions about him professionally and concisely. If you don't know something, say you'll have Mukharji get back to them. Resume Context: ${resumeContext}` }] },
-        ...history,
-        { role: 'user', parts: [{ text: message }] }
-      ],
-      config: {
-        temperature: 0.7,
-        maxOutputTokens: 500,
-      }
-    });
-    return response.text;
-  } catch (error) {
-    console.error("AI Chat Error:", error);
-    return "I'm sorry, I'm having trouble connecting to my AI brain right now. Please try again later!";
+  const lowerMessage = message.toLowerCase();
+  
+  // Experience queries
+  if (lowerMessage.includes('experience') || lowerMessage.includes('work') || lowerMessage.includes('job')) {
+    return "Mukharji has 9+ years of experience as a Senior Frontend Developer. Currently at Bio-Rad Laboratories (since Aug 2022) working on AI-driven imaging interfaces with Angular 16+. Previously at Reynolds and Reynolds (2019-2022) building React SPAs, and Express Scripts (2017-2019) developing healthcare web apps.";
   }
+  
+  // Skills queries
+  if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech stack')) {
+    return "Mukharji specializes in React/Next.js, Angular 18+, Vue.js, TypeScript, and Tailwind CSS. He's expert in AI-Powered Interfaces, Redux/NgRx, RxJS, and has certifications in Generative AI, Prompt Engineering, and Cloud AI.";
+  }
+  
+  // AI/ML queries
+  if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('machine learning')) {
+    return "Mukharji specializes in AI-driven UI development. At Bio-Rad, he leads development of AI-powered imaging interfaces and collaborates with ML engineers to create intuitive AI experiences. He's certified in Generative AI, Prompt Engineering, and Cloud Generative AI.";
+  }
+  
+  // Projects queries
+  if (lowerMessage.includes('project') || lowerMessage.includes('portfolio')) {
+    return "Key projects include: Aura AI Assistant (voice-controlled AI with PC automation, persistent memory, and 18+ tools using React, Gemini API, OpenAI API), Deep-Zoom Medical Viewer (Angular + Canvas API for large-scale medical imaging), and MediSchedule (AI-powered medical appointment system with voice calling, live transcription, and patient management using React, Vapi AI, Gemini API).";
+  }
+  
+  // Education queries
+  if (lowerMessage.includes('education') || lowerMessage.includes('degree') || lowerMessage.includes('university')) {
+    return "Mukharji holds a Master's in Information Technology from American College of Commerce and Technology (2017) and a Bachelor's in Computer Science from Osmania University (2009).";
+  }
+  
+  // Contact queries
+  if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone') || lowerMessage.includes('reach')) {
+    return "You can reach Mukharji at mukharjivajje@gmail.com or call 412-932-0039. He's also on LinkedIn at linkedin.com/in/mukharji-vajje-182a7a326";
+  }
+  
+  // Location queries
+  if (lowerMessage.includes('location') || lowerMessage.includes('where') || lowerMessage.includes('based')) {
+    return "Mukharji is based in New Market, Maryland, United States.";
+  }
+  
+  // Angular queries
+  if (lowerMessage.includes('angular')) {
+    return "Mukharji is highly proficient in Angular 16+ and Angular 18. At Bio-Rad, he leads development of complex Angular applications with Material UI and Kendo UI for AI-driven imaging interfaces.";
+  }
+  
+  // React queries
+  if (lowerMessage.includes('react')) {
+    return "Mukharji has extensive React experience. At Reynolds and Reynolds, he developed large-scale React.js SPAs with Redux. He's also skilled in Next.js and modern React patterns with TypeScript.";
+  }
+  
+  // Default response
+  return "I can help you learn about Mukharji's experience, skills, projects, education, or contact information. What would you like to know?";
 }

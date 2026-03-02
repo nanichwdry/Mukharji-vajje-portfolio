@@ -45,24 +45,27 @@ interface Project {
 }
 
 // Configuration - Update your profile image URL here!
-const PROFILE_IMAGE_URL = "https://images.unsplash.com/photo-1560250097-0b93528c311a?fit=crop&w=800&q=80";
+const PROFILE_IMAGE_URL = "/Mukharji Vajje.png";
 
 // Data
 const PROJECTS: Project[] = [
   {
-    title: "AI Resume Builder",
-    description: "A tool that uses LLMs to help users craft professional resumes based on their experience and target roles.",
-    tags: ["React", "Gemini API", "Tailwind CSS"],
+    title: "Aura AI Assistant",
+    description: "Voice-controlled AI assistant with PC automation, persistent memory, code analysis, route planning, weather, news, and document generation capabilities.",
+    tags: ["React", "Gemini API", "OpenAI API", "Node.js", "Tailwind CSS"],
+    link: "https://aura-ai-assistant-nine.vercel.app"
   },
   {
     title: "Deep-Zoom Medical Viewer",
     description: "A high-performance visualization tool for large-scale medical imaging data with smooth zooming and panning.",
     tags: ["Angular", "Canvas API", "RxJS"],
+    link: "https://deep-zoom-medical-viewer.vercel.app"
   },
   {
-    title: "Collaboration Dashboard",
-    description: "A real-time dashboard for team collaboration featuring live updates and interactive data visualizations.",
-    tags: ["Next.js", "WebSockets", "D3.js"],
+    title: "MediSchedule",
+    description: "Medical appointment system with AI voice calling, live transcription, patient management, consent tracking, and analytics dashboard for healthcare providers.",
+    tags: ["React", "Vapi AI", "Gemini API", "Node.js", "Tailwind CSS"],
+    link: "https://medi-schedule-black.vercel.app/"
   }
 ];
 const EXPERIENCES: Experience[] = [
@@ -344,13 +347,23 @@ export default function App() {
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, j) => (
                     <span key={j} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-white/5 text-slate-500 border border-white/5">
                       {tag}
                     </span>
                   ))}
                 </div>
+                {project.link && (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-ai-primary hover:underline font-medium"
+                  >
+                    View Project <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>
@@ -470,7 +483,7 @@ export default function App() {
                   </div>
                   <div>
                     <h3 className="font-display font-bold">Resume Assistant</h3>
-                    <p className="text-xs text-ai-primary font-medium">Powered by Gemini AI</p>
+                    <p className="text-xs text-ai-primary font-medium">Ask me anything!</p>
                   </div>
                 </div>
                 <button 
