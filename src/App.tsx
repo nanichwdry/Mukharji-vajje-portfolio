@@ -66,6 +66,12 @@ const PROJECTS: Project[] = [
     description: "Medical appointment system with AI voice calling, live transcription, patient management, consent tracking, and analytics dashboard for healthcare providers.",
     tags: ["React", "Vapi AI", "Gemini API", "Node.js", "Tailwind CSS"],
     link: "https://medi-schedule-black.vercel.app/"
+  },
+  {
+    title: "CyberForge",
+    description: "Cybersecurity LMS teaching Web Application Security through 6 modules with interactive lessons, code examples, quizzes, and LTI integration for platforms like Canvas.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "LTI Integration"],
+    link: "https://cyberforge-blond.vercel.app/"
   }
 ];
 const EXPERIENCES: Experience[] = [
